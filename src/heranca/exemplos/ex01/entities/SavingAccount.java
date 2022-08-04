@@ -25,8 +25,9 @@ public class SavingAccount extends Account{
         balance+= balance *interesRate;
     }
 
-    @Override
+    //metodo sobreescritoda classe account
+    @Override// boa pratica colocar o @Override sempre que sobrepor
     public void withdraw(Double amount){
-        balance-= amount;
+        balance=balance- amount;
     }
 }
