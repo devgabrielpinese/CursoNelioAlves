@@ -1,6 +1,7 @@
 package heranca.exemplos.ex01.entities;
 
 public class Account {
+    //com anotacoes
     private  Integer number;
     private String holder;
     protected Double balance;

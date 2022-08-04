@@ -1,6 +1,7 @@
 package heranca.exemplos.ex01.entities;
 
 public class BusinessAccount  extends Account{
+    //com anotacoes
 
     private Double loanLImit;
 
