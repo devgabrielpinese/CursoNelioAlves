@@ -14,6 +14,8 @@ public class MainSuperEmMetodos {
         acc1.withdraw(200.0);
         System.out.println(acc1.getBalance());
 
+
+        //metodo @Override super
         Account acc2 = new BusinessAccount(1003,"roberto",1000.0,200.0);
         acc2.withdraw(200.0);
         System.out.println(acc2.getBalance());
