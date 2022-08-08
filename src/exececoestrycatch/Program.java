@@ -10,7 +10,7 @@ public class Program {
         /*String[]vect = sc.nextLine().split(" ");
         int position = sc.nextInt();
         System.out.println(vect[position]);*/
-        //tratamento com trycatch
+        //tratamento com trycatch,
         try{
             String[]vect = sc.nextLine().split(" ");
             int position = sc.nextInt();
