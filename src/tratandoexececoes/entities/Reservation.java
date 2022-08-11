@@ -1,4 +1,4 @@
-package tratandoexececoes.application;
+package tratandoexececoes.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -39,13 +39,13 @@ public class Reservation {
     }
 
     public long durantion(){
-        //diferenA EM MILESSEGUNDOS
-        long diff = checkin.getTime()-checkin.getTime();
-        return TimeUnit.DAYS.convert(diff,TimeUnit.MILLISECONDS);
+        //diferenca em milliseconds
+        long diff = checkout.getTime()-checkin.getTime();//calculo para obter a diferrenca entre checkin e checkout
+        return TimeUnit.DAYS.convert(diff,TimeUnit.MILLISECONDS);//aqui converte o valor em milliseconds em dias
     }
-    public void UpdateDates (Date checkin, Date checlout){
-        this.checkin = checkin;
-        this.checkout = checlout;
+    public void UpdateDates (Date checkin, Date checlout){//metodo com parametros checkin e checkout
+        this.checkin = checkin;//this.checkin recebe checkin do parametro que vai ser digitado
+        this.checkout = checlout;//this.checkout recebe checkout do parametro que vai   ser digitado
     }
 
     @Override
@@ -53,7 +53,7 @@ public class Reservation {
         return
                 "room " + roomMunber +
                 ", checkin=" + sdf.format(checkin) +
-                ", checlout=" + sdf.format(checkout) +
-                '}';
+                ", checkout=" + sdf.format(checkout)+", " +
+                        durantion()+" nights";
     }
 }

@@ -1,6 +1,6 @@
 package heranca.exemplos.ex01.entities;
 
-public class SavingAccount extends Account{
+public class SavingAccount extends Account {
     //com anotacoes
     private Double interesRate;
 
