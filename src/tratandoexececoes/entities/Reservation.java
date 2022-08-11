@@ -43,9 +43,21 @@ public class Reservation {
         long diff = checkout.getTime()-checkin.getTime();//calculo para obter a diferrenca entre checkin e checkout
         return TimeUnit.DAYS.convert(diff,TimeUnit.MILLISECONDS);//aqui converte o valor em milliseconds em dias
     }
-    public void UpdateDates (Date checkin, Date checlout){//metodo com parametros checkin e checkout
+    public String  UpdateDates (Date checkin, Date checlout){//metodo com parametros checkin e checkout
+        Date now= new Date();
+        //if (checkIn.before(now)||checkout.before(now)) //era para ser esse if
+        //porem ele se aplica as datas de agora, com aplicacoes que vao rodar agora
+        //
+        if (!checkin.after(getCheckin())) {
+            return "reservation dates for updates must be future dates";
+        }
+        if (!checlout.after(checkin)) {// aqui estou usando o negativo
+            //} else if (checkout.before(checkIn)) { outra opcao, aqui estou usando e acertivo
+            return "error in reservation: check-out date must be after checkin date ";
+        }
         this.checkin = checkin;//this.checkin recebe checkin do parametro que vai ser digitado
         this.checkout = checlout;//this.checkout recebe checkout do parametro que vai   ser digitado
+        return  null;
     }
 
     @Override

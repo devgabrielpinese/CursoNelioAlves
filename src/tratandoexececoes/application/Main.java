@@ -9,6 +9,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) throws ParseException {
         //throws ParseException meu metodo pode lancar essa exececao , ela vai ser propagada.
         Locale.setDefault(Locale.US);
@@ -38,19 +40,16 @@ public class Main {
             checkIn = sdf.parse(sc.next());//reusa a variavel checkin
             System.out.print("checkout date (dd/MM/yyyy):");//digite data checlout
             checkout = sdf.parse(sc.next());//reusa a variavel checkout
-            if (!checkIn.after(reservation.getCheckin())) {
-                System.out.println("error in reservation: check-out date must be after checkin date ");
-            } else if (!checkout.after(checkIn)) {
-                System.out.println("error in reservation: check-out date must be after checkin date ");
-            } else{
 
 
-            reservation.UpdateDates(checkIn, checkout);//chama o metodo UpdateDates com parametros checkin e checkout
-            System.out.println("reservation " + reservation);//printa reservation com o ToString()
+            String error = reservation.UpdateDates(checkIn, checkout);//chama o metodo UpdateDates com parametros checkin e checkout
+            if (error != null) {
+                System.out.println("error in reservation: " + error);
+            } else {
+                System.out.println("reservation " + reservation);//printa reservation com o ToString()
+            }
+            sc.close();
         }
+
     }
-
-
-        sc.close();
-}
 }
