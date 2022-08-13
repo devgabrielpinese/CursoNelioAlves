@@ -49,10 +49,13 @@ public class Main {
 
         }
         catch (ParseException e ){
-            System.out.println("invalid day format");
+            System.out.println("invalid day format");//esse erro eu sei que pode acontecer
         }
-        catch (DomainException e){
+        catch (DomainException e){//tratamos essa exececao com a msg personalizada
             System.out.println("error in reservation: "+ e.getMessage());
+        }
+        catch (RuntimeException e){//e essa com um erro inesperados
+            System.out.println("unexpected error");
         }
         sc.close();
 
