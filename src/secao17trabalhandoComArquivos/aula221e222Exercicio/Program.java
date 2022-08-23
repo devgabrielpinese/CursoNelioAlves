@@ -16,7 +16,7 @@ public class Program {
         System.out.println("enter file path: ");
         //variavel para receber ovalor digitado desse caminho
         String sourceFileStr = sc.nextLine();
-        //outra variavel somente para organiazr que recebe o valor da pirmeira varivel com valor digitado
+        //outra variavel da classe FIle e instaciamos no Tipo File  valor da pirmeira varivel com valor digitado
         File sourceFile = new File(sourceFileStr);
         //variavel que vai receber somente o caminho da pasta e nao do arquivo
         String sourceFolderStr = sourceFile.getParent();
